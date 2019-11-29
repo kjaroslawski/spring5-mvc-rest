@@ -1,6 +1,6 @@
-package guru.springfamework.repositories;
+package pl.qamar.spring5mvcrest.repositories;
 
-import guru.springfamework.domain.Category;
+import pl.qamar.spring5mvcrest.domain.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

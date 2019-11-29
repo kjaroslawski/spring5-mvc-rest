@@ -1,4 +1,4 @@
-package guru.springfamework;
+package pl.qamar.spring5mvcrest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package guru.springfamework.api.v1.model;
+package pl.qamar.spring5mvcrest.api.v1.model;
 
 import lombok.Data;
 

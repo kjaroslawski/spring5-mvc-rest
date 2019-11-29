@@ -1,7 +1,7 @@
-package guru.springfamework.bootstrap;
+package pl.qamar.spring5mvcrest.bootstrap;
 
-import guru.springfamework.domain.Category;
-import guru.springfamework.repositories.CategoryRepository;
+import pl.qamar.spring5mvcrest.domain.Category;
+import pl.qamar.spring5mvcrest.repositories.CategoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

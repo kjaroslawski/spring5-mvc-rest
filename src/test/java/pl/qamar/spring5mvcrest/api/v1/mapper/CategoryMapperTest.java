@@ -1,8 +1,8 @@
-package guru.springfamework.api.v1.mapper;
+package pl.qamar.spring5mvcrest.api.v1.mapper;
 
-import guru.springfamework.api.v1.model.CategoryDTO;
-import guru.springfamework.domain.Category;
+import pl.qamar.spring5mvcrest.api.v1.model.CategoryDTO;
 import org.junit.Test;
+import pl.qamar.spring5mvcrest.domain.Category;
 
 import static org.junit.Assert.assertEquals;
 

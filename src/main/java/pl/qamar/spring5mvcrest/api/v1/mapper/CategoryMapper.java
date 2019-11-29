@@ -1,7 +1,8 @@
-package guru.springfamework.api.v1.mapper;
+package pl.qamar.spring5mvcrest.api.v1.mapper;
 
-import guru.springfamework.api.v1.model.CategoryDTO;
-import guru.springfamework.domain.Category;
+import org.mapstruct.Mapping;
+import pl.qamar.spring5mvcrest.api.v1.model.CategoryDTO;
+import pl.qamar.spring5mvcrest.domain.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -10,5 +11,6 @@ public interface CategoryMapper {
 
     CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
 
+    @Mapping(source = "id", target = "id")
     CategoryDTO categoryToCategoryDTO(Category category);
 }
