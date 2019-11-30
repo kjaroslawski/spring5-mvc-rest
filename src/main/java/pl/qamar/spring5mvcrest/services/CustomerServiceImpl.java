@@ -3,6 +3,7 @@ package pl.qamar.spring5mvcrest.services;
 import org.springframework.stereotype.Service;
 import pl.qamar.spring5mvcrest.api.v1.mapper.CustomerMapper;
 import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
+import pl.qamar.spring5mvcrest.domain.Customer;
 import pl.qamar.spring5mvcrest.repositories.CustomerRepository;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     public List<CustomerDTO> getAllCustomers() {
         return customerRepository.findAll().stream().map(customer -> {
             CustomerDTO customerDTO = customerMapper.customerToCustomerDTO(customer);
-            customerDTO.setCustomURL("/api/v1/customers/" + customer.getId());
+            customerDTO.setCustomerURL("/api/v1/customers/" + customer.getId());
             return customerDTO;
         }).collect(Collectors.toList());
     }
@@ -32,5 +33,14 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO getCustomerById(Long id) {
         return customerRepository.findById(id).map(customerMapper::customerToCustomerDTO).orElseThrow(
                 RuntimeException::new);
+    }
+
+    @Override
+    public CustomerDTO createNewCustomer(CustomerDTO customerDTO) {
+        Customer customer = customerMapper.customerDTOToCustomer(customerDTO);
+        Customer savedCustomer = customerRepository.save(customer);
+        CustomerDTO returnedCustomer = customerMapper.customerToCustomerDTO(savedCustomer);
+        returnedCustomer.setCustomerURL("api/v1/customers/" + savedCustomer.getId());
+        return returnedCustomer;
     }
 }

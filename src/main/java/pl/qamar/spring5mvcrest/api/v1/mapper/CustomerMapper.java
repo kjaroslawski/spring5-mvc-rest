@@ -11,7 +11,9 @@ public interface CustomerMapper {
 
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
-    @Mapping(target = "customURL", ignore = true)
+    @Mapping(target = "customerURL", ignore = true)
     @Mapping(source = "id", target = "id")
     CustomerDTO customerToCustomerDTO(Customer category);
+
+    Customer customerDTOToCustomer(CustomerDTO customerDTO);
 }
