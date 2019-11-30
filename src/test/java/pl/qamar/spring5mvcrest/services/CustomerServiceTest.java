@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pl.qamar.spring5mvcrest.api.v1.mapper.CustomerMapper;
 import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
+import pl.qamar.spring5mvcrest.controllers.v1.CustomerController;
 import pl.qamar.spring5mvcrest.domain.Customer;
 import pl.qamar.spring5mvcrest.repositories.CustomerRepository;
 
@@ -90,7 +91,7 @@ public class CustomerServiceTest {
 
         //Then
         assertEquals(customerDTO.getFirstName(), savedDTO.getFirstName());
-        assertEquals("api/v1/customers/1", savedDTO.getCustomerURL());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDTO.getCustomerURL());
     }
 
     @Test
@@ -112,7 +113,7 @@ public class CustomerServiceTest {
 
         //Then
         assertEquals(customerDTO.getFirstName(), savedDTO.getFirstName());
-        assertEquals("api/v1/customers/" + ID, savedDTO.getCustomerURL());
+        assertEquals(CustomerController.BASE_URL + "/" + ID, savedDTO.getCustomerURL());
     }
 
     @Test
