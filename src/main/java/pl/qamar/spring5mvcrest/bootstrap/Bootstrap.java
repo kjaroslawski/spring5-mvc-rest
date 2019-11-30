@@ -1,27 +1,33 @@
 package pl.qamar.spring5mvcrest.bootstrap;
 
-import pl.qamar.spring5mvcrest.domain.Category;
-import pl.qamar.spring5mvcrest.domain.Customer;
-import pl.qamar.spring5mvcrest.repositories.CategoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import pl.qamar.spring5mvcrest.domain.Category;
+import pl.qamar.spring5mvcrest.domain.Customer;
+import pl.qamar.spring5mvcrest.domain.Vendor;
+import pl.qamar.spring5mvcrest.repositories.CategoryRepository;
 import pl.qamar.spring5mvcrest.repositories.CustomerRepository;
+import pl.qamar.spring5mvcrest.repositories.VendorRepository;
 
 @Component
 public class Bootstrap implements CommandLineRunner {
 
     private CategoryRepository categoryRepository;
     private CustomerRepository customerRepository;
+    private VendorRepository vendorRepository;
 
-    public Bootstrap(CategoryRepository categoryRepository, CustomerRepository customerRepository) {
+    public Bootstrap(CategoryRepository categoryRepository, CustomerRepository customerRepository,
+                     VendorRepository vendorRepository) {
         this.categoryRepository = categoryRepository;
         this.customerRepository = customerRepository;
+        this.vendorRepository = vendorRepository;
     }
 
     @Override
     public void run(String... args) {
         loadCategories();
         loadCustomers();
+        loadVendors();
     }
 
     private void loadCategories() {
@@ -64,5 +70,17 @@ public class Bootstrap implements CommandLineRunner {
         customerRepository.save(customer2);
 
         System.out.println("Customers Loaded = " + customerRepository.count());
+    }
+
+    private void loadVendors() {
+        Vendor vendor1 = new Vendor();
+        vendor1.setName("Abc");
+        vendorRepository.save(vendor1);
+
+        Vendor vendor2 = new Vendor();
+        vendor2.setName("Def");
+        vendorRepository.save(vendor2);
+
+        System.out.println("Vendors Loaded = " + vendorRepository.count());
     }
 }

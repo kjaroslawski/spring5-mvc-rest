@@ -11,7 +11,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
 import pl.qamar.spring5mvcrest.controllers.v1.AbstractRestControllerTest;
 import pl.qamar.spring5mvcrest.controllers.v1.CustomerController;
-import pl.qamar.spring5mvcrest.domain.Customer;
 import pl.qamar.spring5mvcrest.services.CustomerService;
 
 import java.util.Arrays;

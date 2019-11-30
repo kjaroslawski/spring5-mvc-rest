@@ -12,6 +12,7 @@ import pl.qamar.spring5mvcrest.bootstrap.Bootstrap;
 import pl.qamar.spring5mvcrest.domain.Customer;
 import pl.qamar.spring5mvcrest.repositories.CategoryRepository;
 import pl.qamar.spring5mvcrest.repositories.CustomerRepository;
+import pl.qamar.spring5mvcrest.repositories.VendorRepository;
 
 import java.util.List;
 
@@ -31,6 +32,9 @@ public class CustomerServiceImplJpaDataTest {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private VendorRepository vendorRepository;
+
     private CustomerService customerService;
 
     @Before
@@ -38,7 +42,7 @@ public class CustomerServiceImplJpaDataTest {
         System.out.println("Loading Customer Data");
         System.out.println(customerRepository.findAll().size());
 
-        Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository);
+        Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository, vendorRepository);
         bootstrap.run();
 
         customerService = new CustomerServiceImpl(customerRepository, CustomerMapper.INSTANCE);
