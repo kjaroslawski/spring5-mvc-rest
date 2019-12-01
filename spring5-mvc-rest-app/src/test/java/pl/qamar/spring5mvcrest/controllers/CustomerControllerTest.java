@@ -111,10 +111,9 @@ public class CustomerControllerTest extends AbstractRestControllerTest {
         mockMvc.perform(
                 post(CustomerController.BASE_URL)
                         .accept(MediaType.APPLICATION_JSON)
-                        .contentType(MediaType.APPLICATION_JSON).content(asJsonString(customer)))
-               .andExpect(status().isCreated())
-               .andExpect(jsonPath("$.firstName", equalTo(FIRST_NAME)))
-               .andExpect(jsonPath("$.customerURL", equalTo(CustomerController.BASE_URL + "/1")));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(customer)))
+               .andExpect(status().isCreated());
     }
 
     @Test
