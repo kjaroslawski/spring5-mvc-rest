@@ -31,6 +31,7 @@
         <springfox-swagger.version>2.7.0</springfox-swagger.version>
         <jackson-dataformat-xml>2.10.1</jackson-dataformat-xml>
         <woodstox-core-asl>4.4.1</woodstox-core-asl>
+        <jaxb2.version>2.3.1</jaxb2.version>
     </properties>
 
     <repositories>
