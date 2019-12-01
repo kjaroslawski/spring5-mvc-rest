@@ -1,5 +1,4 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="CustomerListDTO" type="CustomerListDTO"/>
     <xs:complexType name="CustomerDTO">
         <xs:sequence>
             <xs:element type="xs:long" name="id" minOccurs="0"/>
@@ -8,6 +7,7 @@
             <xs:element type="xs:string" name="customerURL" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:element name="CustomerListDTO" type="CustomerListDTO"/>
     <xs:complexType name="CustomerListDTO">
         <xs:sequence>
             <xs:element type="CustomerDTO" name="customers" maxOccurs="unbounded" minOccurs="0"/>
