@@ -1,7 +1,7 @@
 package pl.qamar.spring5mvcrest.repositories;
 
-import pl.qamar.spring5mvcrest.domain.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.qamar.spring5mvcrest.domain.Category;
 
 /**
  * Created by jt on 9/24/17.
