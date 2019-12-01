@@ -1,8 +1,8 @@
 package pl.qamar.spring5mvcrest.services;
 
 import org.springframework.stereotype.Service;
+import pl.qamar.model.CustomerDTO;
 import pl.qamar.spring5mvcrest.api.v1.mapper.CustomerMapper;
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
 import pl.qamar.spring5mvcrest.controllers.v1.CustomerController;
 import pl.qamar.spring5mvcrest.domain.Customer;
 import pl.qamar.spring5mvcrest.repositories.CustomerRepository;

@@ -1,7 +1,7 @@
 package pl.qamar.spring5mvcrest.api.v1.mapper;
 
 import org.junit.Test;
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
+import pl.qamar.model.CustomerDTO;
 import pl.qamar.spring5mvcrest.domain.Customer;
 
 import static org.junit.Assert.assertEquals;

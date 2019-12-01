@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerListDTO;
+import pl.qamar.model.CustomerDTO;
+import pl.qamar.model.CustomerListDTO;
 import pl.qamar.spring5mvcrest.services.CustomerService;
 
 @Api(description = "This is my Customer Controller")
@@ -34,7 +34,9 @@ public class CustomerController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public CustomerListDTO getAllCustomers() {
-        return new CustomerListDTO(customerService.getAllCustomers());
+        CustomerListDTO customerListDTO = new CustomerListDTO();
+        customerListDTO.getCustomers().addAll(customerService.getAllCustomers());
+        return customerListDTO;
     }
 
     @GetMapping("{id}")

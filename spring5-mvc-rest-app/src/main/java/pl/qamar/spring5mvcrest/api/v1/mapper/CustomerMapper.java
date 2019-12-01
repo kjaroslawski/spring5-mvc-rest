@@ -3,7 +3,7 @@ package pl.qamar.spring5mvcrest.api.v1.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
+import pl.qamar.model.CustomerDTO;
 import pl.qamar.spring5mvcrest.domain.Customer;
 
 @Mapper

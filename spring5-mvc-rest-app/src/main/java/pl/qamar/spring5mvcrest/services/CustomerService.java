@@ -1,6 +1,6 @@
 package pl.qamar.spring5mvcrest.services;
 
-import pl.qamar.spring5mvcrest.api.v1.model.CustomerDTO;
+import pl.qamar.model.CustomerDTO;
 
 import java.util.List;
 
